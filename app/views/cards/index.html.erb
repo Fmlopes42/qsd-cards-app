@@ -2,9 +2,10 @@
 
 <h2><%= link_to "INSERIR CARD", new_card_path %></h2>
 
-<h2>Todos os cards</h2>
+
+<h2>Todos os cards: </h2>
 <div id="cards">
   <% @cards.each do |card| %>
-    <p><%= "#{card.frente} |> #{card.verso}"%></p>
+    <p><%= link_to "#{card.frente} |> #{card.verso}", card %></p>
   <%  end  %>
 </div>

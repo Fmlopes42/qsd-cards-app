@@ -1,1 +1,2 @@
-<p><%= @card %> </p>
+<p><%= "#{@card.frente} |> #{@card.verso}" %> </p>
+<p><%= link_to "EXCLUIR CARD", card_path(@card) , method: :delete %></p>

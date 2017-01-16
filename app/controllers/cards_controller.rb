@@ -1,5 +1,4 @@
 class CardsController < ApplicationController
-  SEPARADOR = " |> "
   def index
     @cards = Card.all
   end
@@ -15,14 +14,13 @@ class CardsController < ApplicationController
   end
 
   def show
-    card = Card.find(params[:id])
-    @card = "#{card.frente}#{SEPARADOR}#{card.verso}"
+    @card = Card.find(params[:id])
   end
 
-  def delete
+  def destroy
     @card = Card.find(params[:id])
-    @card.delete
-    
+    @card.destroy
+    redirect_to root_path
   end
 
 end
