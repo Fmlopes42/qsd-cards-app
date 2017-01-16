@@ -1,0 +1,9 @@
+<h1>Novo Card</h1>
+
+<%= form_for @card do |f| %>
+<p><%= f.label :frente, "portugues" %>
+<%= f.text_field :frente %></p>
+<p><%= f.label :verso, "ingles" %>
+<%= f.text_field :verso %></p>
+<p><%= f.submit%></p>
+<% end %>
