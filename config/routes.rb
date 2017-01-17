@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   root 'cards#index'
-  resources :cards, only: [:new, :create, :show, :index, :destroy]
+  resources :cards, only: [:new, :create, :show, :index, :destroy, :search]
+  get '/search', to: 'cards#search'
 end

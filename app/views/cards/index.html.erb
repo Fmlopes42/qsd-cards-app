@@ -1,9 +1,13 @@
 <h1>Bem-vindo ao CardsApp!</h1>
 
-<h2>Escolha uma opção</h2>
+<p><%= form_tag("/search", method: "get") do %></p>
+  <p><%= label_tag(:search, "PESQUISAR CARD") %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Pesquisar") %></p>
+<% end %>
+
 <p><%= link_to "INSERIR CARD", new_card_path %></p>
-<p><%= link_to "PESQUISAR CARD (X)", root_path%></p>
-<p><%= link_to "EXCLUIR CARD (X)", root_path%></p>
+
 
 <h2>Todos os cards: </h2>
 <div id="cards">

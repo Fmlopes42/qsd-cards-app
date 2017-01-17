@@ -23,6 +23,19 @@ class CardsController < ApplicationController
     redirect_to root_path
   end
 
+  def include?(search)
+
+  end
+
   def search
+    search = params[:search]
+    @card = Card.all.select do |card|
+      if search.upcase == card.frente.upcase || search.upcase == card.verso.upcase
+        true
+      else
+        false
+      end
+    end
+    redirect_to card_path(@card)
   end
 end
