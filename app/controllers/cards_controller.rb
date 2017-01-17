@@ -9,6 +9,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(frente: params[:card][:frente], verso: params[:card][:verso])
+
     if @card.invalid? == true
       redirect_to invalid_path
       return
